@@ -1,4 +1,4 @@
-/ script.js
+// script.js
 // Dados das soluções
 const solutions = [
     {
