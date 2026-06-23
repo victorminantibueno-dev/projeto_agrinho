@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verde Horizonte • Futuro Sustentável</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>Verde Horizonte</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="smoothScrollTo('home')">Início</a></li>
+                <li><a href="#sobre" onclick="smoothScrollTo('sobre')">Sobre</a></li>
+                <li><a href="#solucoes" onclick="smoothScrollTo('solucoes')">Soluções</a></li>
+                <li><a href="#calculadora" onclick="smoothScrollTo('calculadora')">Calculadora</a></li>
+                <li><a href="#impacto" onclick="smoothScrollTo('impacto')">Impacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button onclick="toggleTheme()" class="theme-toggle" id="theme-toggle">🌙</button>
+                <button onclick="openPledgeModal()" class="btn-primary">Faça seu Compromisso</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Futuro <span class="highlight">Sustentável</span></h1>
+            <p>Construindo um planeta mais verde, uma ação por vez.</p>
+            <div class="hero-buttons">
+                <button onclick="smoothScrollTo('solucoes')" class="btn-primary">Conheça as Soluções</button>
+                <button onclick="smoothScrollTo('calculadora')" class="btn-secondary">Calcule seu Impacto</button>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <span class="counter" data-target="2050">2050</span>
+                    <p>Meta Net Zero</p>
+                </div>
+                <div>
+                    <span class="counter" data-target="1000000">1M+</span>
+                    <p>Pessoas Impactadas</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="overlay"></div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2>O Que é um Futuro Sustentável?</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Um futuro sustentável é aquele em que as necessidades da geração atual são atendidas sem comprometer a capacidade das gerações futuras de atenderem às suas próprias necessidades.</p>
+                    <p>Envolve equilíbrio entre economia, sociedade e meio ambiente, com foco em energias renováveis, economia circular, preservação da biodiversidade e equidade social.</p>
+                </div>
+                <div class="about-image">
+                    <div class="illustration">🌍</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soluções -->
+    <section id="solucoes" class="section bg-light">
+        <div class="container">
+            <h2>Soluções Inovadoras</h2>
+            <div class="cards-grid" id="solutions-grid">
+                <!-- Cards serão gerados via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora -->
+    <section id="calculadora" class="section">
+        <div class="container">
+            <h2>Calculadora de Pegada de Carbono</h2>
+            <div class="calculator">
+                <div class="calc-inputs">
+                    <label>Quantos km você dirige por semana? (carro)</label>
+                    <input type="range" id="km" min="0" max="500" value="100" oninput="updateCalc()">
+                    <span id="km-value">100 km</span>
+
+                    <label>Quantas refeições com carne por semana?</label>
+                    <input type="range" id="meat" min="0" max="21" value="7" oninput="updateCalc()">
+                    <span id="meat-value">7 refeições</span>
+
+                    <label>Consumo médio mensal de energia (kWh)</label>
+                    <input type="range" id="energy" min="50" max="1000" value="200" oninput="updateCalc()">
+                    <span id="energy-value">200 kWh</span>
+                </div>
+
+                <div class="calc-result">
+                    <h3>Sua pegada estimada:</h3>
+                    <div class="result-number" id="carbon-result">4.8</div>
+                    <p>toneladas de CO₂ por ano</p>
+                    <div class="result-bar">
+                        <div class="bar-fill" id="result-bar" style="width: 65%"></div>
+                    </div>
+                    <button onclick="suggestSolutions()" class="btn-primary">Ver Soluções Personalizadas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impacto -->
+    <section id="impacto" class="section bg-light">
+        <div class="container">
+            <h2>Impacto Global</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="counter" data-target="420">420</span>
+                    <p>ppm de CO₂ atual</p>
+                </div>
+                <div class="stat-card">
+                    <span class="counter" data-target="30">30</span>
+                    <p>% de energia renovável mundial</p>
+                </div>
+                <div class="stat-card">
+                    <span class="counter" data-target="8">8</span>
+                    <p>milhões de km² de florestas protegidas</p>
+                </div>
+                <div class="stat-card">
+                    <span class="counter" data-target="150">150</span>
+                    <p>países com metas Net Zero</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Verde Horizonte</h3>
+                    <p>Por um planeta melhor.</p>
+                </div>
+                <div>
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#solucoes">Soluções</a></li>
+                        <li><a href="#calculadora">Calculadora</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Compartilhe</h4>
+                    <button onclick="shareSite()" class="social-btn">📲</button>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 Verde Horizonte • Feito com ❤️ para o futuro
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Compromisso -->
+    <div id="pledge-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePledgeModal()">×</span>
+            <h2>Faça seu Compromisso</h2>
+            <form id="pledge-form" onsubmit="submitPledge(event)">
+                <input type="text" placeholder="Seu nome" required>
+                <input type="email" placeholder="Seu e-mail" required>
+                <select required>
+                    <option value="">Escolha um compromisso</option>
+                    <option>Reduzir consumo de carne</option>
+                    <option>Usar transporte público</option>
+                    <option>Plantar árvores</option>
+                    <option>Economizar energia</option>
+                    <option>Reciclar mais</option>
+                </select>
+                <button type="submit" class="btn-primary">Assumir Compromisso</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
